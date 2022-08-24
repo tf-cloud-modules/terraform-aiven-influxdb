@@ -17,6 +17,18 @@ resource "aiven_influxdb" "this" {
     recovery_basebackup_name = var.recovery_basebackup_name
     service_to_fork_from     = var.service_to_fork_from
 
+    public_access {
+      influxdb = var.public_access_influxdb
+    }
+
+    private_access {
+      influxdb = var.private_access_influxdb
+    }
+
+    privatelink_access {
+      influxdb = var.privatelink_influxdb
+    }
+
     dynamic "influxdb" {
       for_each = var.influxdb_user_config
       content {

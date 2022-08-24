@@ -97,3 +97,21 @@ variable "influxdb_user_config" {
   type        = list(any)
   default     = []
 }
+
+variable "public_access_influxdb" {
+  description = "Allow clients to connect to influxdb from the public internet for service nodes that are in a project VPC or another type of private network."
+  type        = bool
+  default     = false
+}
+
+variable "private_access_influxdb" {
+  description = "Allow clients to connect to influxdb with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations."
+  type        = bool
+  default     = false
+}
+
+variable "privatelink_influxdb" {
+  description = "Enable influxdb."
+  type        = bool
+  default     = false
+}
