@@ -91,3 +91,9 @@ variable "service_to_fork_from" {
   type        = string
   default     = ""
 }
+
+variable "influxdb_user_config" {
+  description = "influxdb.conf configuration values."
+  type        = list(any)
+  default     = []
+}

@@ -16,6 +16,18 @@ resource "aiven_influxdb" "this" {
     project_to_fork_from     = var.project_to_fork_from
     recovery_basebackup_name = var.recovery_basebackup_name
     service_to_fork_from     = var.service_to_fork_from
+
+    dynamic "influxdb" {
+      for_each = var.influxdb_user_config
+      content {
+        log_queries_after    = lookup(influxdb.value, "log_queries_after", null)
+        max_connection_limit = lookup(influxdb.value, "max_connection_limit", null)
+        max_row_limit        = lookup(influxdb.value, "max_row_limit", null)
+        max_select_buckets   = lookup(influxdb.value, "max_select_buckets", null)
+        max_select_point     = lookup(influxdb.value, "max_select_point", null)
+        query_timeout        = lookup(influxdb.value, "query_timeout", null)
+      }
+    }
   }
 
   dynamic "tag" {
