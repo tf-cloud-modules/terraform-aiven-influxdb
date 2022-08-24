@@ -10,6 +10,14 @@ resource "aiven_influxdb" "this" {
   service_name            = var.service_name
   termination_protection  = var.termination_protection
 
+  influxdb_user_config {
+    custom_domain            = var.custom_domain
+    ip_filter                = var.ip_filter
+    project_to_fork_from     = var.project_to_fork_from
+    recovery_basebackup_name = var.recovery_basebackup_name
+    service_to_fork_from     = var.service_to_fork_from
+  }
+
   dynamic "tag" {
     for_each = var.tags
     content {

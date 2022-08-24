@@ -61,3 +61,33 @@ variable "termination_protection" {
   type        = bool
   default     = false
 }
+
+variable "custom_domain" {
+  description = "Custom domain."
+  type        = string
+  default     = ""
+}
+
+variable "ip_filter" {
+  description = "IP filter."
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
+}
+
+variable "project_to_fork_from" {
+  description = "Name of another project to fork a service from."
+  type        = string
+  default     = ""
+}
+
+variable "recovery_basebackup_name" {
+  description = "Name of the basebackup to restore in forked service."
+  type        = string
+  default     = ""
+}
+
+variable "service_to_fork_from" {
+  description = "Name of another service to fork from."
+  type        = string
+  default     = ""
+}
