@@ -13,5 +13,5 @@ This document describes the current status of this project.
 | ✔ | [Add influxdb_user_config.public_access]() || 
 | ✔ | [Add database module]() || 
 | ✔ | [Add user module]() || 
-| ❌ | [Add service_integrations]() || 
+| ✔ | [Add service_integrations]() || 
 | ✔ | [Add examples]() || 
