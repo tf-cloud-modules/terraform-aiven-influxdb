@@ -29,7 +29,9 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_database"></a> [database](#module\_database) | ../../modules/database | n/a |
 | <a name="module_influxdb"></a> [influxdb](#module\_influxdb) | ../.. | n/a |
+| <a name="module_user"></a> [user](#module\_user) | ../../modules/user | n/a |
 
 ## Resources
 
@@ -37,7 +39,9 @@ No resources.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
 
 ## Outputs
 
