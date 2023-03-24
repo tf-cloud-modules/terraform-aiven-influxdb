@@ -12,10 +12,17 @@ resource "aiven_influxdb" "this" {
 
   influxdb_user_config {
     custom_domain            = var.custom_domain
-    ip_filter                = var.ip_filter
     project_to_fork_from     = var.project_to_fork_from
     recovery_basebackup_name = var.recovery_basebackup_name
     service_to_fork_from     = var.service_to_fork_from
+
+    dynamic "ip_filter_object" {
+      for_each = var.ip_filter_object
+      content {
+        network     = lookup(ip_filter_object.value, "network")
+        description = lookup(ip_filter_object.value, "description", null)
+      }
+    }
 
     public_access {
       influxdb = var.public_access_influxdb

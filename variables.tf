@@ -65,31 +65,25 @@ variable "termination_protection" {
 variable "custom_domain" {
   description = "Custom domain."
   type        = string
-  default     = ""
-}
-
-variable "ip_filter" {
-  description = "IP filter."
-  type        = list(string)
-  default     = ["0.0.0.0/0"]
+  default     = null
 }
 
 variable "project_to_fork_from" {
   description = "Name of another project to fork a service from."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "recovery_basebackup_name" {
   description = "Name of the basebackup to restore in forked service."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "service_to_fork_from" {
   description = "Name of another service to fork from."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "influxdb_user_config" {
@@ -120,4 +114,14 @@ variable "service_integrations" {
   description = "Service integrations to specify when creating a service."
   type        = list(any)
   default     = []
+}
+
+variable "ip_filter_object" {
+  description = "Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'."
+  type        = list(any)
+  default = [
+    {
+      network = "0.0.0.0/0"
+    }
+  ]
 }
