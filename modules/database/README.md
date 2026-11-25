@@ -1,5 +1,7 @@
 # Aiven InfluxDB Database Terraform module
 
+> **Deprecated.** Aiven for InfluxDB has reached end-of-life and the `aiven_influxdb_database` resource was removed from the `aiven/aiven` provider in `4.54.0`. This submodule is pinned to provider versions `>= 4.53.0, < 4.54.0`. No further updates are planned.
+
 Terraform module which creates Aiven InfluxDB Database resources
 
 ## Usage
@@ -17,15 +19,15 @@ module "database" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.0.0, < 5.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.53.0, < 4.54.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | >= 4.0.0, < 5.0.0 |
+| ---- | ------- |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.53.0 |
 
 ## Modules
 
@@ -34,13 +36,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aiven_influxdb_database.this](https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/influxdb_database) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
 | <a name="input_database_name"></a> [database\_name](#input\_database\_name) | The name of the service database. | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
@@ -50,7 +52,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_database_name"></a> [database\_name](#output\_database\_name) | The name of the service database. |
 | <a name="output_id"></a> [id](#output\_id) | The ID of this resource. |
 | <a name="output_project"></a> [project](#output\_project) | Aiven Cloud Project Name. |

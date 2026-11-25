@@ -1,4 +1,8 @@
+**English** | [Русский](README.ru.md)
+
 # Aiven InfluxDB Terraform module
+
+> **Deprecated.** Aiven for InfluxDB has reached end-of-life: all active services were powered off and deleted after April 30, 2025 ([Aiven EOL notice](https://aiven.io/docs/platform/reference/end-of-life)). The `aiven_influxdb`, `aiven_influxdb_database`, and `aiven_influxdb_user` resources were removed from the `aiven/aiven` provider in `4.54.0`, so this module is pinned to provider versions `>= 4.53.0, < 4.54.0` — the last line that still supports InfluxDB. No further updates are planned.
 
 Terraform module which creates Aiven InfluxDB resources
 
@@ -17,15 +21,15 @@ module "influxdb" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.0.0, < 5.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.53.0, < 4.54.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 3.5.1 |
+| ---- | ------- |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.53.0 |
 
 ## Modules
 
@@ -34,18 +38,18 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aiven_influxdb.this](https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/influxdb) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_cloud_name"></a> [cloud\_name](#input\_cloud\_name) | Defines where the cloud provider and region where the service is hosted in. | `string` | `"aws-us-east-1"` | no |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
 | <a name="input_custom_domain"></a> [custom\_domain](#input\_custom\_domain) | Custom domain. | `string` | `null` | no |
 | <a name="input_influxdb_user_config"></a> [influxdb\_user\_config](#input\_influxdb\_user\_config) | influxdb.conf configuration values. | `list(any)` | `[]` | no |
-| <a name="input_ip_filter_object"></a> [ip\_filter\_object](#input\_ip\_filter\_object) | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'. | `list(any)` | <pre>[<br>  {<br>    "network": "0.0.0.0/0"<br>  }<br>]</pre> | no |
+| <a name="input_ip_filter_object"></a> [ip\_filter\_object](#input\_ip\_filter\_object) | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'. | `list(any)` | <pre>[<br/>  {<br/>    "network": "0.0.0.0/0"<br/>  }<br/>]</pre> | no |
 | <a name="input_maintenance_window_dow"></a> [maintenance\_window\_dow](#input\_maintenance\_window\_dow) | Day of week when maintenance operations should be performed. One monday, tuesday, wednesday, etc. | `string` | `"thursday"` | no |
 | <a name="input_maintenance_window_time"></a> [maintenance\_window\_time](#input\_maintenance\_window\_time) | Time of day when maintenance operations should be performed. UTC time in HH:mm:ss format. | `string` | `"01:00:00"` | no |
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"startup-4"` | no |
@@ -66,7 +70,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_cloud_name"></a> [cloud\_name](#output\_cloud\_name) | Defines where the cloud provider and region where the service is hosted in. |
 | <a name="output_components"></a> [components](#output\_components) | Service component information objects. |
 | <a name="output_disk_space_cap"></a> [disk\_space\_cap](#output\_disk\_space\_cap) | The maximum disk space of the service, possible values depend on the service type, the cloud provider and the project. |
