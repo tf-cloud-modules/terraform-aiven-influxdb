@@ -1,5 +1,7 @@
 # Aiven InfluxDB User Terraform module
 
+> **Deprecated.** Aiven for InfluxDB has reached end-of-life and the `aiven_influxdb_user` resource was removed from the `aiven/aiven` provider in `4.54.0`. This submodule is pinned to provider versions `>= 4.53.0, < 4.54.0`. No further updates are planned.
+
 Terraform module which creates Aiven InfluxDB User resources
 
 ## Usage
@@ -17,15 +19,15 @@ module "user" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.0.0, < 5.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.53.0, < 4.54.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | >= 4.0.0, < 5.0.0 |
+| ---- | ------- |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.53.0 |
 
 ## Modules
 
@@ -34,13 +36,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aiven_influxdb_user.this](https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/influxdb_user) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
 | <a name="input_service_name"></a> [service\_name](#input\_service\_name) | Specifies the actual name of the service. | `string` | n/a | yes |
@@ -49,7 +51,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_access_cert"></a> [access\_cert](#output\_access\_cert) | Access certificate for the user. |
 | <a name="output_access_key"></a> [access\_key](#output\_access\_key) | Access certificate key for the user. |
 | <a name="output_id"></a> [id](#output\_id) | The ID of this resource. |
